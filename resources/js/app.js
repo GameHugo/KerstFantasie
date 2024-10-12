@@ -10,7 +10,12 @@ let lastHours = -1
 let lastMinutes = -1
 let lastSeconds = -1
 
-const interval = setInterval(() => {
+updateTimer()
+setInterval(() => {
+    updateTimer()
+}, 1000);
+
+function updateTimer() {
     const now = new Date().getTime()
     const distance = goal - now
 
@@ -39,4 +44,4 @@ const interval = setInterval(() => {
     if (loading.style.display !== 'none') {
         loading.style.display = 'none'
     }
-}, 1000)
+}
